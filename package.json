@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "An implementation of Express and BabylonJS to make it easier to code BabylonJS apps in NodeJS",
   "main": "server.js",
-  "scripts": {
-    "test": "nodemon --exec \"mocha -R min\""
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yazheirx/babylon_express_server.git"

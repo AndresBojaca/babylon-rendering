@@ -7,6 +7,6 @@
     }
   ],
   "cors": {
-    "allowedOrigins": ["https://babylonrendering.azureedge.net"]
+    "allowedOrigins": ["*"]
   }
 }

@@ -1,95 +1,108 @@
-const glbs = require("../assets/utils/glbs.json");
-window.addEventListener("DOMContentLoaded", function async() {
-  var toLoad = glbs.length;
-  var canvas = document.getElementById("canvas");
-  var engine = new BABYLON.Engine(canvas, true, {
-    adaptToDeviceRatio: true,
-    disableWebGL2Support: true
-  });
-  var createScene = function () {
-    var scene = new BABYLON.Scene(engine);
-    var camera = new BABYLON.FlyCamera("cameraDrone", new BABYLON.Vector3(0, 200, 0), scene);
-    camera.attachControl(canvas, true);
-    camera.setTarget(new BABYLON.Vector3(20, 20, 0));
-    scene.activeCamera = camera;
-    new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1000, 300), scene).intensity = 0.9;
-    var toLoad = glbs.length;
-    loadModelsAndTextures();
-    return scene;
-  };
-  var scene = createScene();
-  scene.debugLayer.show();
-  function loadModelsAndTextures() {
-    const promises = [];
-    glbs.forEach(glb => {
-      //Texture Type Validation
-      if (glb.texture?.url) {
-        promises.push(loadModel(glb.glbfile, {
-          type: 'file',
-          texture: glb.texture.url
-        }, `${glb.modelName}`));
-      }
-      if (glb.texture?.color) {
-        promises.push(loadModel(glb.glbfile, {
-          type: 'color',
-          texture: glb.texture
-        }, `${glb.modelName}`));
-      }
-    });
-    return Promise.all(promises);
-  }
-  function loadModel(modelFile, textureModel, materialName) {
-    return new Promise(resolve => {
-      BABYLON.SceneLoader.ImportMesh("", "", modelFile, scene, function (meshes) {
-        const meshMaterial = new BABYLON.StandardMaterial(materialName, scene);
-        //Texture Type Validation
-        if (textureModel.type === 'file') {
-          const texture = new BABYLON.Texture(textureModel.texture, scene);
-          texture.vScale = -1;
-          meshMaterial.diffuseTexture = texture;
-        } else if (textureModel.type === 'color') {
-          meshMaterial.diffuseColor = new BABYLON.Color3.FromHexString(textureModel.texture.color);
-          meshMaterial.alpha = textureModel.texture.alpha;
-        }
-        meshes.forEach(mesh => {
-          meshes[0].material = meshMaterial;
-          meshes[1].material = meshMaterial;
-          mesh.checkCollisions = true;
-        });
-        resolve();
-      });
-    });
-  }
+import glbs from '../assets/utils/glbs.json';
 
-  //SKY
-  const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", {
-    size: 1000.0
-  }, scene);
-  const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
-  skyboxMaterial.backFaceCulling = false;
-  skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("assets/textures/skybox", scene);
-  skybox.infiniteDistance = true;
-  skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
-  skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
-  skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
-  skybox.material = skyboxMaterial;
-  async function whenDoneFunction(meshe, glbdata, scene) {
-    toLoad--;
-    /*await loadTextures();
-          let texture = new BABYLON.Texture("assets/textures/torre1/Torre1low.webp", scene);
-          texture.vScale = -1;
-          let meshMaterial = new BABYLON.StandardMaterial("test", scene);
-          meshMaterial.diffuseTexture = texture;
-          meshe.forEach((mesh) => {
-               mesh[0].material = meshMaterial;
-               mesh[1].material = meshMaterial;
-               mesh.checkCollisions = true;
-          });*/
-    if (toLoad === 0) {
-      alert("loading done!");
+// Obtener el lienzo de la página
+var canvas = document.getElementById("renderCanvas");
+
+// Crear una nueva escena en Babylon.js
+var engine = new BABYLON.Engine(canvas, true);
+var scene = new BABYLON.Scene(engine);
+// scene.debugLayer.show();
+
+loadModelsAndTextures();
+// CameraDRONE();
+CameraARC();
+function loadModelsAndTextures() {
+  const promises = [];
+  glbs.forEach(glb => {
+    //Texture Type Validation
+    if (glb.texture?.url) {
+      promises.push(loadModel(glb.glbfile, {
+        type: 'file',
+        texture: glb.texture.url
+      }, `${glb.modelName}`));
     }
-  }
-  engine.runRenderLoop(function () {
-    scene.render();
+    if (glb.texture?.color) {
+      promises.push(loadModel(glb.glbfile, {
+        type: 'color',
+        texture: glb.texture
+      }, `${glb.modelName}`));
+    }
   });
+  return Promise.all(promises);
+}
+function loadModel(modelFile, textureModel, materialName) {
+  return new Promise(resolve => {
+    BABYLON.SceneLoader.ImportMesh("", "", modelFile, scene, function (meshes) {
+      const meshMaterial = new BABYLON.StandardMaterial(materialName, scene);
+      //Texture Type Validation
+      if (textureModel.type === 'file') {
+        const texture = new BABYLON.Texture(textureModel.texture, scene);
+        texture.vScale = -1;
+        // meshMaterial.diffuseTexture = texture;
+      } else if (textureModel.type === 'color') {
+        meshMaterial.diffuseColor = new BABYLON.Color3.FromHexString(textureModel.texture.color);
+        meshMaterial.alpha = textureModel.texture.alpha;
+      }
+      meshes.forEach(mesh => {
+        meshes[0].material = meshMaterial;
+        meshes[1].material = meshMaterial;
+        mesh.checkCollisions = true;
+      });
+      resolve();
+    });
+  });
+}
+
+//SKY
+const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", {
+  size: 1000.0
+}, scene);
+const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
+skyboxMaterial.backFaceCulling = false;
+skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("assets/textures/skybox", scene);
+skybox.infiniteDistance = true;
+skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
+skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
+skybox.material = skyboxMaterial;
+function CameraARC() {
+  // Configurar la cámara y la luz
+  var camera = new BABYLON.ArcRotateCamera("camera1", -200, -200, -80, new BABYLON.Vector3(0, 200, 0), scene);
+  camera.setTarget(BABYLON.Vector3.Zero());
+  camera.attachControl(canvas, true);
+  camera.lowerRadiusLimit = 150;
+  camera.upperRadiusLimit = 300;
+  camera.wheelDeltaPercentage = 0.01;
+  camera.applyGravity = true;
+  scene.collisionsEnabled = true;
+  camera.checkCollisions = true;
+  //Lights
+  new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1000, 300), scene).intensity = 0.9;
+}
+function CameraDRONE() {
+  const camera = new BABYLON.FlyCamera("FlyCamera", new BABYLON.Vector3(40, 60, 150), scene);
+  camera.setTarget(new BABYLON.Vector3(20, 20, 0));
+  // Airplane like rotation, with faster roll correction and banked-turns.
+  // Default is 100. A higher number means slower correction.
+  camera.rollCorrect = 10;
+  // Default is false.
+  camera.bankedTurn = true;
+  // Defaults to 90° in radians in how far banking will roll the camera.
+  camera.bankedTurnLimit = Math.PI / 2;
+  // How much of the Yawing (turning) will affect the Rolling (banked-turn.)
+  // Less than 1 will reduce the Rolling, and more than 1 will increase it.
+  camera.bankedTurnMultiplier = 1;
+  scene.gravity = new BABYLON.Vector3(0, -0.15, 0);
+
+  // This attaches the camera to the canvas
+  camera.attachControl(canvas, true);
+  scene.collisionsEnabled = true;
+  camera.checkCollisions = true;
+  //Lights
+  new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+}
+
+// Iniciar la renderización
+engine.runRenderLoop(function () {
+  scene.render();
 });

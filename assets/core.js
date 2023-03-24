@@ -46,7 +46,7 @@ function loadModel(modelFile, textureModel, materialName) {
       if (textureModel.type === 'file') {
         const texture = new BABYLON.Texture(textureModel.texture, scene);
         texture.vScale = -1;
-        meshMaterial.diffuseTexture = texture;
+        // meshMaterial.diffuseTexture = texture;
       } else if (textureModel.type === 'color') {
         meshMaterial.diffuseColor = new BABYLON.Color3.FromHexString(textureModel.texture.color);
         meshMaterial.alpha = textureModel.texture.alpha;

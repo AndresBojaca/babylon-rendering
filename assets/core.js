@@ -9,16 +9,16 @@ var engine = new BABYLON.Engine(canvas, true);
 var scene = new BABYLON.Scene(engine);
 // scene.debugLayer.show();
 
-window.onload = function () {
-  // Mostrar el mensaje o el elemento de carga
-  const loadingEl = document.getElementById('loading-message');
-  if(loadingEl){
-    loadingEl.style.opacity = '0';
-    setTimeout(() => {
-      loadingEl.style.display = 'none';
-    }, 1000);
-  }
-};
+// window.onload = function () {
+//   // Mostrar el mensaje o el elemento de carga
+//   const loadingEl = document.getElementById('loading-message');
+//   if(loadingEl){
+//     loadingEl.style.opacity = '0';
+//     setTimeout(() => {
+//       loadingEl.style.display = 'none';
+//     }, 1000);
+//   }
+// };
 
 loadModelsAndTextures();
 // CameraDRONE();

@@ -1,5 +1,5 @@
 
-import glbs from './utils/glbs.json' assert { type: "json" };
+import glbs from '../assets/utils/glbs.json' assert { type: "json" };
 
 // Obtener el lienzo de la página
 var canvas = document.getElementById("renderCanvas");

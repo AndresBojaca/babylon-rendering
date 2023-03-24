@@ -1,8 +1,8 @@
 {
-    "routes": [
-      {
-        "route": "/*",
-        "allowedOrigins": ["https://www.example.com"]
-      }
-    ]
-  }
+  "routes": [
+    {
+      "route": "/*",
+      "allowedOrigins": ["*"]
+    }
+  ]
+}

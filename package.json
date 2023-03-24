@@ -5,6 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "start": "node server.js",
+    "build": "babel-cli server.js --out-file dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +28,8 @@
     "babylonjs": "^5.52.0",
     "cors": "^2.8.5",
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   }
 }

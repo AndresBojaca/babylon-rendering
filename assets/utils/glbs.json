@@ -1,518 +1,518 @@
 [
   {
     "modelName": "torre1",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Torre1.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre1.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Torre1low.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Torre1low.webp"
     }
   },
   {
     "modelName": "torre1_ventanas",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Torre1Ventanas.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre1Ventanas.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Torre1Ventanaslow.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Torre1Ventanaslow.webp"
     }
   },
   {
       "modelName": "torre1_fachada_falsa",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre1FachadaFalsa.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre1FachadaFalsa.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre1FachadaFalsalow.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre1FachadaFalsalow.webp"
       }
   },
   {
       "modelName": "torre1_cubierta",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre1Cubierta.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre1Cubierta.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre1Cubiertalow.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre1Cubiertalow.webp"
       }
   },
   {
       "modelName": "torre1_escaleras",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre2Escaleras.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre2Escaleras.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre1Escaleraslow.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre1Escaleraslow.webp"
       }
   },
   {
       "modelName": "torre2",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre2.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre2.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre2.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre2.webp"
       }
   },
   {
       "modelName": "torre2_ventanas",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre2Ventanas.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre2Ventanas.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre2Ventanas.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre2Ventanas.webp"
       }
   },
   {
       "modelName": "torre2_fachada_falsa",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre2FachadaFalsa.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre2FachadaFalsa.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre2FachadaFalsa.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre2FachadaFalsa.webp"
       }
   },
   {
       "modelName": "torre2_cubierta",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre2Cubierta.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre2Cubierta.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre2Cubierta.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre2Cubierta.webp"
       }
   },
   {
       "modelName": "torre2_escaleras",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre2Escaleras.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre2Escaleras.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre2Escaleras.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre2Escaleras.webp"
       }
   },
   {
         "modelName": "torre3",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre3.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre3.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre3.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre3.webp"
       }
   },
   {
         "modelName": "torre3_cubierta",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre3Cubierta.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre3Cubierta.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre3Cubierta.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre3Cubierta.webp"
       }
   },
   {
         "modelName": "torre4",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre4.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre4.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre4.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre4.webp"
       }
   },
   {
         "modelName": "torre4_cubierta",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre4Cubierta.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre4Cubierta.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre4Cubierta.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre4Cubierta.webp"
       }
   },
   {
         "modelName": "torre3y4_ventanas",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre3y4Ventanas.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre3y4Ventanas.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre3y4Ventanas.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre3y4Ventanas.webp"
       }
   },
   {
         "modelName": "torre3y4_Fachada_Falsa",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre3y4FachadaFalsa.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre3y4FachadaFalsa.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre3y4FachadaFalsa.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre3y4FachadaFalsa.webp"
       }
   },
   {
         "modelName": "torre3y4_Deck",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Torre3y4Deck.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Torre3y4Deck.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Torre3y4Deck.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Torre3y4Deck.webp"
       }
   },
   {
         "modelName": "salon_ascensor",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Ascensor.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Ascensor.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Ascensor.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Ascensor.webp"
       }
   },
   {
         "modelName": "salon_baranda_escalera",
-      "glbfile": "https://babylonrendering.azureedge.net/models/BarandaEscalera.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/BarandaEscalera.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/BarandaEscalera.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/BarandaEscalera.webp"
       }
   },
   {
         "modelName": "salon_bordillo",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Bordillo.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Bordillo.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Bordillo.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Bordillo.webp"
       }
   },
   {
         "modelName": "salon_chimenea",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Chimenea.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Chimenea.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Chimenea.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Chimenea.webp"
       }
   },
   {
         "modelName": "salon_comunal",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Comunal.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Comunal.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Comunal.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Comunal.webp"
       }
   },
   {
         "modelName": "salon_escaleras",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Escaleras.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Escaleras.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Escaleras.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Escaleras.webp"
       }
   },
   {
         "modelName": "salon_fachada",
-      "glbfile": "https://babylonrendering.azureedge.net/models/FachadaFalsa.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/FachadaFalsa.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/FachadaFalsa.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/FachadaFalsa.webp"
       }
   },
   {
         "modelName": "salon_laminado1",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Laminado1.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Laminado1.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Laminado1.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Laminado1.webp"
       }
   },
   {
         "modelName": "salon_laminado2",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Laminado2.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Laminado2.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Laminado2.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Laminado2.webp"
       }
   },
   {
         "modelName": "salon_logotipo",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Logotipo.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Logotipo.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Logotipo.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Logotipo.webp"
       }
   },
   {
         "modelName": "salon_pasto",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Pasto.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Pasto.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Pasto.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Pasto.webp"
       }
   },
   {
         "modelName": "salon_salida",
-      "glbfile": "https://babylonrendering.azureedge.net/models/SalidaEmergencia.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/SalidaEmergencia.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/SalidaEmergencia.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/SalidaEmergencia.webp"
       }
   },
   {
         "modelName": "salon_ventanas",
-      "glbfile": "https://babylonrendering.azureedge.net/models/Ventanas.glb",
+      "glbfile": "https://babylongrendering.blob.core.windows.net/models/Ventanas.glb",
       "texture": {
-        "url": "https://babylonrendering.azureedge.net/textures/Ventanas.webp"
+        "url": "https://babylongrendering.blob.core.windows.net/textures/Ventanas.webp"
       }
   },
   {
     "modelName": "urbanismo_adoquin",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Adoquin.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Adoquin.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Adoquin.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Adoquin.webp"
     }
   },
   {
     "modelName": "urbanismo_adoquin_ocre",
-    "glbfile": "https://babylonrendering.azureedge.net/models/AdoquinOcre.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/AdoquinOcre.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/AdoquinOcre.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/AdoquinOcre.webp"
     }
   },
   {
     "modelName": "urbanismo_caminos_robles",
-    "glbfile": "https://babylonrendering.azureedge.net/models/CaminosRobles.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/CaminosRobles.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/CaminosRobles.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/CaminosRobles.webp"
     }
   },
   {
     "modelName": "urbanismo_andenes",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Andenes.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Andenes.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Andenes.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Andenes.webp"
     }
   },
   {
     "modelName": "urbanismo_andenes",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Andenes.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Andenes.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Andenes.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Andenes.webp"
     }
   },
   {
     "modelName": "urbanismo_arcos_futbol",
-    "glbfile": "https://babylonrendering.azureedge.net/models/ArcosFutbol.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/ArcosFutbol.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/ArcosFutbol.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/ArcosFutbol.webp"
     }
   },
   {
     "modelName": "urbanismo_cancha",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Cancha.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Cancha.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Cancha.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Cancha.webp"
     }
   },
   {
     "modelName": "urbanismo_cancha_alpha",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Cancha.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Cancha.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/CanchaAlpha.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/CanchaAlpha.webp"
     }
   },
   {
     "modelName": "urbanismo_cancha_voley",
-    "glbfile": "https://babylonrendering.azureedge.net/models/CanchaVolley.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/CanchaVolley.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/CanchaVolley.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/CanchaVolley.webp"
     }
   },
   {
     "modelName": "urbanismo_carretera",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Carretera.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Carretera.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Carretera.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Carretera.webp"
     }
   },
   {
     "modelName": "urbanismo_casas_vecinas",
-    "glbfile": "https://babylonrendering.azureedge.net/models/CasasVecinas.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/CasasVecinas.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/CasasVecinas.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/CasasVecinas.webp"
     }
   },
   {
     "modelName": "urbanismo_casas_vecinas",
-    "glbfile": "https://babylonrendering.azureedge.net/models/CasasVecinas.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/CasasVecinas.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/CasasVecinas.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/CasasVecinas.webp"
     }
   },
   {
     "modelName": "urbanismo_cerramiento_parques",
-    "glbfile": "https://babylonrendering.azureedge.net/models/CerramientoParques.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/CerramientoParques.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/CerramientoParques.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/CerramientoParques.webp"
     }
   },
   {
     "modelName": "urbanismo_ciclovia",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Ciclovia.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Ciclovia.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Ciclovia.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Ciclovia.webp"
     }
   },
   {
     "modelName": "urbanismo_circuito_trote",
-    "glbfile": "https://babylonrendering.azureedge.net/models/CircuitoTrote.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/CircuitoTrote.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/CircuitoTrote.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/CircuitoTrote.webp"
     }
   },
   {
     "modelName": "urbanismo_concreto",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Concreto.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Concreto.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Concreto.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Concreto.webp"
     }
   },
   {
     "modelName": "urbanismo_deck_concreto",
-    "glbfile": "https://babylonrendering.azureedge.net/models/DeckConcreto.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/DeckConcreto.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/DeckConcreto.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/DeckConcreto.webp"
     }
   },
   {
     "modelName": "urbanismo_malla_volley",
-    "glbfile": "https://babylonrendering.azureedge.net/models/MallaVoley.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/MallaVoley.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/MallaVoley.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/MallaVoley.webp"
     }
   },
   {
     "modelName": "urbanismo_parque_futbol",
-    "glbfile": "https://babylonrendering.azureedge.net/models/ParqueFutbol.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/ParqueFutbol.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/ParqueFutbol.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/ParqueFutbol.webp"
     }
   },
   {
     "modelName": "urbanismo_pasto",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Pasto.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Pasto.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Pasto4.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Pasto4.webp"
     }
   },
   {
     "modelName": "urbanismo_pasto_sendero",
-    "glbfile": "https://babylonrendering.azureedge.net/models/PastoSendero.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/PastoSendero.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/PastoSendero.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/PastoSendero.webp"
     }
   },
   {
     "modelName": "urbanismo_rampas",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Rampas.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Rampas.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Rampas.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Rampas.webp"
     }
   },
   {
     "modelName": "urbanismo_sinteticos",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Sinteticos.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Sinteticos.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/Sinteticos.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/Sinteticos.webp"
     }
   },
   {
     "modelName": "flora_adoquin",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraAdoquin.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraAdoquin.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraAdoquin.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraAdoquin.webp"
     }
   },
   {
     "modelName": "flora_anden",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraAnden.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraAnden.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraAnden.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraAnden.webp"
     }
   },
   {
     "modelName": "flora_bancas",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraBancas.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraBancas.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraBancas.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraBancas.webp"
     }
   },
   {
     "modelName": "flora_baranda_escaleras",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraBarandaEscaleras.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraBarandaEscaleras.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraBarandaEscaleras.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraBarandaEscaleras.webp"
     }
   },
   {
     "modelName": "flora_bordillo",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraBordillo.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraBordillo.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraBordillo.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraBordillo.webp"
     }
   },
   {
     "modelName": "flora_cerramiento",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraCerramiento.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraCerramiento.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraCerramiento.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraCerramiento.webp"
     }
   },
   {
     "modelName": "flora_escaleras",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraEscaleras.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraEscaleras.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraEscaleras.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraEscaleras.webp"
     }
   },
   {
     "modelName": "flora_lobby",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraLobby.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraLobby.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraLobby.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraLobby.webp"
     }
   },
   {
     "modelName": "flora_ventana",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraVentana.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraVentana.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloralVentana.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloralVentana.webp"
     }
   },
   {
     "modelName": "flora_muros",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraMuros.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraMuros.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraMuros.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraMuros.webp"
     }
   },
   {
     "modelName": "flora_muros_parqueadero",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraMurosParqueadero.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraMurosParqueadero.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraMurosParqueadero.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraMurosParqueadero.webp"
     }
   },
   {
     "modelName": "flora_capuchino",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraParedCapuchino.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraParedCapuchino.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraParedCapuchino.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraParedCapuchino.webp"
     }
   },
   {
     "modelName": "flora_pisos",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraPisos.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraPisos.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraPisos.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraPisos.webp"
     }
   },
   {
     "modelName": "flora_sintetico_azul",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraSinteticoAzul.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraSinteticoAzul.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraSinteticoAzul.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraSinteticoAzul.webp"
     }
   },
   {
     "modelName": "flora_tierra",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraTierra.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraTierra.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraTierra3.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraTierra3.webp"
     }
   },
   {
     "modelName": "flora_volumen",
-    "glbfile": "https://babylonrendering.azureedge.net/models/FloraVolumen.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/FloraVolumen.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/FloraVolumen.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/FloraVolumen.webp"
     }
   },
   {
     "modelName": "urbanismo_cancha_alpha",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Cancha.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Cancha.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/CanchaAlpha.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/CanchaAlpha.webp"
     }
   },
   {
     "modelName": "urbanismo_malla_volley_alpha",
-    "glbfile": "https://babylonrendering.azureedge.net/models/MallaVoley.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/MallaVoley.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/MallaVoleyAlpha.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/MallaVoleyAlpha.webp"
     }
   },
   {
     "modelName": "urbanismo_base_sintetico",
-    "glbfile": "https://babylonrendering.azureedge.net/models/BaseSintetico.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/BaseSintetico.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/BaseSintetico.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/BaseSintetico.webp"
     }
   },
   {
     "modelName": "urbanismo_arcos_futbol_alpha",
-    "glbfile": "https://babylonrendering.azureedge.net/models/ArcosFutbol.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/ArcosFutbol.glb",
     "texture": {
-      "url": "https://babylonrendering.azureedge.net/textures/ArcosFutbolalpha.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/ArcosFutbolalpha.webp"
     }
   },
   {
     "modelName": "urbanismo_edificios",
-    "glbfile": "https://babylonrendering.azureedge.net/models/Edificios.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/Edificios.glb",
     "texture": {
       "color": "#ffffff",
       "alpha": 0.7

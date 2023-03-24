@@ -1,8 +1,8 @@
 {
-  "routes": [
-    {
-      "route": "/*",
-      "allowedOrigins": ["*"]
-    }
-  ]
+    "routes": [
+        {
+            "route": "/models/*",
+            "allowedOrigins": ["https://babylonrendering.azureedge.net"]
+        }
+    ]
 }

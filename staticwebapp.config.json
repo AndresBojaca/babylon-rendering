@@ -8,5 +8,8 @@
         "allowedHeaders": ["*"]
       }
     }
-  ]
+  ],
+    "mimeTypes": {
+    ".js": "text/javascript"
+  }
 }

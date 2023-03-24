@@ -1,5 +1,5 @@
 
-import glbs from '../assets/utils/glbs.json';
+const glbs = require('../assets/utils/glbs.json');
 
 // Obtener el lienzo de la página
 var canvas = document.getElementById("renderCanvas");

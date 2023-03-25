@@ -1,5 +1,5 @@
 
-import glbs from '../assets/utils/glbs.json' assert { type: "json" };
+import glbs from './utils/glbs.json' assert { type: "json" };
 
 // Obtener el lienzo de la página
 var canvas = document.getElementById("renderCanvas");
@@ -7,13 +7,25 @@ var canvas = document.getElementById("renderCanvas");
 // Crear una nueva escena en Babylon.js
 var engine = new BABYLON.Engine(canvas, true);
 var scene = new BABYLON.Scene(engine);
-// scene.debugLayer.show();
+scene.debugLayer.show();
+
+window.onload = function () {
+  // Mostrar el mensaje o el elemento de carga
+  const loadingEl = document.getElementById('loading-message');
+  if(loadingEl){
+    loadingEl.style.opacity = '0';
+    setTimeout(() => {
+      loadingEl.style.display = 'none';
+    }, 1000);
+  }
+};
 
 loadModelsAndTextures();
 // CameraDRONE();
 CameraARC();
 
 function loadModelsAndTextures() {
+  const loadingEl = document.getElementById('loading-message');
   const promises = []
   glbs.forEach(glb => {
     //Texture Type Validation
@@ -24,7 +36,10 @@ function loadModelsAndTextures() {
       promises.push(loadModel(glb.glbfile, { type: 'color', texture: glb.texture }, `${glb.modelName}`));
     }
   });
-  return Promise.all(promises);
+    loadingEl.style.display = 'flex'; // Mostrar el loader
+  return Promise.all(promises).then(() => {
+    loadingEl.style.display = 'none'; // Ocultar el loader
+  });
 }
 
 function loadModel(modelFile, textureModel, materialName) {
@@ -35,7 +50,7 @@ function loadModel(modelFile, textureModel, materialName) {
       if (textureModel.type === 'file') {
         const texture = new BABYLON.Texture(textureModel.texture, scene);
         texture.vScale = -1;
-        // meshMaterial.diffuseTexture = texture;
+        meshMaterial.diffuseTexture = texture;
       } else if (textureModel.type === 'color') {
         meshMaterial.diffuseColor = new BABYLON.Color3.FromHexString(textureModel.texture.color);
         meshMaterial.alpha = textureModel.texture.alpha;
@@ -45,13 +60,32 @@ function loadModel(modelFile, textureModel, materialName) {
         meshes[1].material = meshMaterial;
         mesh.checkCollisions = true;
       })
+      //Make GM Plane
+      // makePlane();
       resolve();
     });
   });
 }
 
+
+//Make Plane
+function makePlane(){
+    const options = {
+      width: 3000,
+      height: 3000,
+      sideOrientation: BABYLON.Mesh.FRONTSIDE,
+      updatable: true
+    };
+    const texture = new BABYLON.Color3.FromHexString('#555555');
+    const plane = BABYLON.MeshBuilder.CreatePlane("plane", options, scene);
+    plane.material = new BABYLON.StandardMaterial("material", scene);
+    plane.rotation.x = Math.PI / 2;
+    plane.position.y = -1;
+    plane.material.diffuseColor = texture;
+  }
+
 //SKY
-const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 1000.0 }, scene);
+const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 4000.0 }, scene);
 const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
 skyboxMaterial.backFaceCulling = false;
 skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("assets/textures/skybox", scene);
@@ -61,16 +95,13 @@ skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
 skybox.material = skyboxMaterial;
 
-
-
 function CameraARC() {
   // Configurar la cámara y la luz
-  var camera = new BABYLON.ArcRotateCamera("camera1", -200, -200, -80, new BABYLON.Vector3(0, 200, 0), scene);
-
+  var camera = new BABYLON.ArcRotateCamera("camera1", -900, 30, -200, new BABYLON.Vector3(0, 200, 0), scene);
   camera.setTarget(BABYLON.Vector3.Zero());
   camera.attachControl(canvas, true);
   camera.lowerRadiusLimit = 150;
-  camera.upperRadiusLimit = 300;
+  camera.upperRadiusLimit = 8000;
   camera.wheelDeltaPercentage = 0.01;
   camera.applyGravity = true;
   scene.collisionsEnabled = true;

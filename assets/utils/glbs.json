@@ -1,0 +1,16 @@
+[
+  {
+    "modelName": "_URBANISMO",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_URBANISMO.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_URBANISMO_Corona_Diffuse.webp"
+    }
+  },
+  {
+    "modelName": "_TORRE1",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE 01.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE 01_Corona_Diffuse.webp"
+    }
+  }
+]

@@ -12,5 +12,19 @@
     "texture": {
       "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE 01_Corona_Diffuse.webp"
     }
+  },
+  {
+    "modelName": "_TORRE2",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE%2002.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE%2002_Corona_Diffuse.webp"
+    }
+  },
+  {
+    "modelName": "_COMUNAL",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_COMUNAL.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_COMUNAL_Corona_Diffuse.webp"
+    }
   }
 ]

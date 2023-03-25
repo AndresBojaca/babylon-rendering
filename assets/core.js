@@ -7,7 +7,7 @@ var canvas = document.getElementById("renderCanvas");
 // Crear una nueva escena en Babylon.js
 var engine = new BABYLON.Engine(canvas, true);
 var scene = new BABYLON.Scene(engine);
-scene.debugLayer.show();
+// scene.debugLayer.show();
 
 window.onload = function () {
   // Mostrar el mensaje o el elemento de carga
@@ -70,20 +70,20 @@ function loadModel(modelFile, textureModel, materialName) {
 
 //Make Plane
 function makePlane(){
-    const options = {
-      width: 3000,
-      height: 3000,
-      sideOrientation: BABYLON.Mesh.FRONTSIDE,
-      updatable: true
-    };
-    const texture = new BABYLON.Color3.FromHexString('#555555');
-    const plane = BABYLON.MeshBuilder.CreatePlane("plane", options, scene);
-    plane.material = new BABYLON.StandardMaterial("material", scene);
-    plane.rotation.x = Math.PI / 2;
-    plane.position.y = -1;
-    plane.material.diffuseColor = texture;
-  }
-
+  const options = {
+    width: 3000,
+    height: 3000,
+    sideOrientation: BABYLON.Mesh.FRONTSIDE,
+    updatable: true
+  };
+   const plane = BABYLON.MeshBuilder.CreatePlane("plane", options, scene);
+  const texture = new BABYLON.Texture('https://babylongrendering.blob.core.windows.net/textures/Concrete07_GLOSS_6K.jpg', scene);
+  const material = new BABYLON.StandardMaterial("PLANO", scene);
+  material.diffuseTexture = texture;
+  plane.material = material;
+  plane.rotation.x = Math.PI / 2;
+  plane.position.y = -1;
+}
 //SKY
 const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 4000.0 }, scene);
 const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
@@ -100,12 +100,17 @@ function CameraARC() {
   var camera = new BABYLON.ArcRotateCamera("camera1", -900, 30, -200, new BABYLON.Vector3(0, 200, 0), scene);
   camera.setTarget(BABYLON.Vector3.Zero());
   camera.attachControl(canvas, true);
-  camera.lowerRadiusLimit = 150;
-  camera.upperRadiusLimit = 8000;
+  camera.lowerRadiusLimit = 50;
+  camera.upperRadiusLimit = 300;
   camera.wheelDeltaPercentage = 0.01;
   camera.applyGravity = true;
   scene.collisionsEnabled = true;
   camera.checkCollisions = true;
+
+  // Cambiar la velocidad horizontal y vertical
+  camera.speed = 1;
+  camera.angularSensibility = 1000;
+
   //Lights
   new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1000, 300), scene).intensity = 0.9;
 }
@@ -132,6 +137,27 @@ function CameraDRONE() {
   //Lights
   new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
 }
+
+
+function createRandomTree(scene, trunkHeight, numBranches) {
+  // crear tronco
+  var trunk = BABYLON.Mesh.CreateCylinder("trunk", trunkHeight, 0.5, 0.5, 12, 1, scene);
+
+  // crear ramas
+  var branches = [];
+  for (var i = 0; i < numBranches; i++) {
+    var branchPoints = [
+      new BABYLON.Vector3(0, trunkHeight * 0.5, 0),
+      new BABYLON.Vector3(Math.random() * 2 - 1, Math.random() * 0.5, Math.random() * 2 - 1).normalize().scale(0.5),
+    ];
+    var branch = BABYLON.Mesh.CreateLines("branch" + i, branchPoints, scene);
+    branch.parent = trunk;
+    branches.push(branch);
+  }
+
+  return trunk;
+}
+
 
 // Iniciar la renderización
 engine.runRenderLoop(function () {

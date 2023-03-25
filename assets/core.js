@@ -61,7 +61,7 @@ function loadModel(modelFile, textureModel, materialName) {
         mesh.checkCollisions = true;
       })
       //Make GM Plane
-      // makePlane();
+      makePlane();
       resolve();
     });
   });

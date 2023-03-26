@@ -1,51 +1,51 @@
 import { UiContext } from "./ui.js";
 
 // Obtener el lienzo de la página
-var canvas = document.getElementById("renderCanvas");
+let canvas = document.getElementById("renderCanvas");
 
 // Crear una nueva escena en Babylon.js
-var engine = new BABYLON.Engine(canvas, true);
-var scene = new BABYLON.Scene(engine);
-scene.debugLayer.show();
+let engine = new BABYLON.Engine(canvas, true);
+let scene = new BABYLON.Scene(engine);
+// scene.debugLayer.show();
 
 loadModelsAndTextures();
 // CameraDRONE();
 const Ui = new UiContext();
 
 function loadModelsAndTextures() {
-  for (let i = 0; i < glbs.length; i++) {
-    loadModel(
-      glbs[i].glbfile,
-      scene,
-      glbs[i].texture.url,
-      glbs[i].texture.isAlpha,
-      glbs[i].texture.backFaceCulling,
-      glbs[i].texture.position
-    );
-  }
+  const loadingEl = document.getElementById('loading-message');
+  const promises = []
+  glbs.forEach(glb => {
+    //Texture Type Validation
+    if (glb.texture?.url) {
+      loadModel(glb.glbfile, scene, { type: 'file', texture: glb.texture.url }, `${glb.modelName}`);
+    }
+    if (glb.color) {
+      loadModel(glb.glbfile, scene, { type: 'color', texture: glb.texture }, `${glb.modelName}`);
+    }
+  });
 }
 
 function loadModel(
   urlGlb,
   scene,
-  textureUrl,
-  isAlpha = false,
-  backFaceCulling = false,
-  position = false
-) {
+  textureModel,
+  modelName,
+  position = false) {
   BABYLON.SceneLoader.ImportMesh("", "", urlGlb, scene, function (meshes) {
-    const meshMaterial1 = new BABYLON.StandardMaterial("AdoquinOcre", scene);
-    let texture = new BABYLON.Texture(textureUrl, scene);
-    texture.vScale = -1;
-    if (isAlpha) {
-      texture.hasAlpha = true;
-      texture.useAlphaFromDiffuseTexture = true;
-      meshMaterial1.alpha = 0.36;
+    const meshMaterial = new BABYLON.StandardMaterial(modelName, scene);
+    //Texture Type Validation
+    if (textureModel.type === 'file') {
+      let texture = new BABYLON.Texture(textureModel.texture, scene);
+      //Flip Textures
+      texture.vScale = -1;
+      //Make Diffuse Texture
+      meshMaterial.diffuseTexture = texture;
+    } else if (textureModel.type === 'color') {
+      meshMaterial.diffuseColor = new BABYLON.Color3.FromHexString(textureModel.texture.color);
+      meshMaterial.alpha = textureModel.texture.alpha;
     }
-    if (backFaceCulling) {
-      meshMaterial1.backFaceCulling = false;
-    }
-
+    //Positon Validation
     if (position) {
       meshes.forEach((ev) => {
         ev.position = new BABYLON.Vector3(
@@ -55,42 +55,15 @@ function loadModel(
         );
       });
     }
-
-    meshMaterial1.diffuseTexture = texture;
     meshes.forEach((ev) => {
-      ev.material = meshMaterial1;
+      ev.material = meshMaterial;
       ev.checkCollisions = true;
     });
   });
 }
-
-//GUI
-var meshT = new BABYLON.Mesh("box", scene);
-var advancedTexture =
-  BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
-
-var markerImage = new BABYLON.GUI.Image(
-  "marker",
-  "https://babylongrendering.blob.core.windows.net/textures/pngegg.png"
-);
-markerImage.width = "32px";
-markerImage.height = "32px";
-markerImage.stretch = BABYLON.GUI.Image.STRETCH_UNIFORM;
-markerImage.onPointerUpObservable.add(function () {
-  modal.style.display = "block";
-});
-advancedTexture.addControl(markerImage);
-markerImage.linkWithMesh(meshT);
-markerImage.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_ALL;
-
-meshT.position = new BABYLON.Vector3(53.63, 31.27, -25.36);
-
-var pickCylinder = function (meshEvent) {
-  modal.style.display = "block";
-};
-var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
+//Lights
+let light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
 light.intensity = 2.0;
-
 
 //Make Plane
 function makePlane() {
@@ -113,6 +86,8 @@ function makePlane() {
 }
 //Make GM Plane
 makePlane();
+// Puntos de Interes
+Ui.makePoint(scene, { position: {x: 53.63, y: 31.27, z: -25.36}, markerImg: { url: 'https://babylongrendering.blob.core.windows.net/textures/pngegg.png' }, modal: { template: '<img style="width: 100%;height: 700px;object-fit: contain;" src="https://ekoospaces-losrobles.herokuapp.com/static/media/1368_fachada_comunal_plazoleta.f015e9365d16e4ecc4b5.jpg"/>' }});
 
 //SKY
 const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 4000.0 }, scene);
@@ -128,7 +103,7 @@ skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
 skybox.material = skyboxMaterial;
 
-var cameraArcRotateCamera = new BABYLON.ArcRotateCamera(
+let cameraArcRotateCamera = new BABYLON.ArcRotateCamera(
   "ArcRotateCamera",
   39.2484,
   1.4,
@@ -175,7 +150,7 @@ function CameraDRONE() {
 
 function createRandomTree(scene, trunkHeight, numBranches) {
   // crear tronco
-  var trunk = BABYLON.Mesh.CreateCylinder(
+  let trunk = BABYLON.Mesh.CreateCylinder(
     "trunk",
     trunkHeight,
     0.5,
@@ -186,9 +161,9 @@ function createRandomTree(scene, trunkHeight, numBranches) {
   );
 
   // crear ramas
-  var branches = [];
-  for (var i = 0; i < numBranches; i++) {
-    var branchPoints = [
+  let branches = [];
+  for (let i = 0; i < numBranches; i++) {
+    let branchPoints = [
       new BABYLON.Vector3(0, trunkHeight * 0.5, 0),
       new BABYLON.Vector3(
         Math.random() * 2 - 1,
@@ -198,7 +173,7 @@ function createRandomTree(scene, trunkHeight, numBranches) {
         .normalize()
         .scale(0.5),
     ];
-    var branch = BABYLON.Mesh.CreateLines("branch" + i, branchPoints, scene);
+    let branch = BABYLON.Mesh.CreateLines("branch" + i, branchPoints, scene);
     branch.parent = trunk;
     branches.push(branch);
   }

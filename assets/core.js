@@ -1,4 +1,3 @@
-import glbs from "./utils/glbs.json";
 import { UiContext } from "./ui.js";
 
 // Obtener el lienzo de la página

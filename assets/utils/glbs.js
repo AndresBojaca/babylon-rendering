@@ -1,4 +1,4 @@
-[
+let glbs = [
   {
     "modelName": "_BARANDAS BALCONES_TORRE 01",
     "glbfile": "https://babylongrendering.blob.core.windows.net/models/_BARANDAS%20BALCONES_TORRE%2001.glb",
@@ -76,4 +76,4 @@
       }
     }
   }
-]
+];

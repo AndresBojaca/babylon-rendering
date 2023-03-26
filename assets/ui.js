@@ -17,6 +17,8 @@ export class UiContext {
     
       // Crear imagen GUI para el marcador
       let markerImage = new BABYLON.GUI.Image("marker");
+      markerImage.width = "50px";
+      markerImage.height = "200px";
       markerImage.stretch = BABYLON.GUI.Image.STRETCH_UNIFORM;
       markerContainer.addControl(markerImage);
       markerImage.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_ALL;
@@ -24,7 +26,7 @@ export class UiContext {
       
       //Modal Validation with template
       if(props.hasOwnProperty('modal')){
-        markerImage.onPointerClickObservable.add(() => {
+        markerImage.onPointerUpObservable.add(() => {
           modal.innerHTML = props.modal.template;
           modal.style.opacity = 1;
         });

@@ -1,5 +1,6 @@
 
 import glbs from './utils/glbs.json' assert { type: "json" };
+import { UiContext } from './ui.js';
 
 // Obtener el lienzo de la página
 var canvas = document.getElementById("renderCanvas");
@@ -7,22 +8,14 @@ var canvas = document.getElementById("renderCanvas");
 // Crear una nueva escena en Babylon.js
 var engine = new BABYLON.Engine(canvas, true);
 var scene = new BABYLON.Scene(engine);
-// scene.debugLayer.show();
-
-window.onload = function () {
-  // Mostrar el mensaje o el elemento de carga
-  const loadingEl = document.getElementById('loading-message');
-  if(loadingEl){
-    loadingEl.style.opacity = '0';
-    setTimeout(() => {
-      loadingEl.style.display = 'none';
-    }, 1000);
-  }
-};
+scene.debugLayer.show();
 
 loadModelsAndTextures();
 // CameraDRONE();
 CameraARC();
+const Ui = new UiContext();
+
+
 
 function loadModelsAndTextures() {
   const loadingEl = document.getElementById('loading-message');
@@ -36,10 +29,7 @@ function loadModelsAndTextures() {
       promises.push(loadModel(glb.glbfile, { type: 'color', texture: glb.texture }, `${glb.modelName}`));
     }
   });
-    loadingEl.style.display = 'flex'; // Mostrar el loader
-  return Promise.all(promises).then(() => {
-    loadingEl.style.display = 'none'; // Ocultar el loader
-  });
+  return Promise.all(promises)
 }
 
 function loadModel(modelFile, textureModel, materialName) {
@@ -63,6 +53,33 @@ function loadModel(modelFile, textureModel, materialName) {
       //Make GM Plane
       makePlane();
       resolve();
+      //GUI
+      var meshT = new BABYLON.Mesh("box", scene);
+      var advancedTexture =
+        BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+
+      var markerImage = new BABYLON.GUI.Image("marker", "https://babylongrendering.blob.core.windows.net/textures/pngegg.png");
+      markerImage.width = "32px";
+      markerImage.height = "32px";
+      markerImage.stretch = BABYLON.GUI.Image.STRETCH_UNIFORM;
+      markerImage.onPointerUpObservable.add(function () {
+        modal.style.display = "block";
+      });
+      advancedTexture.addControl(markerImage);
+      markerImage.linkWithMesh(meshT);
+      markerImage.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_ALL;
+
+      meshT.position = new BABYLON.Vector3(53.63, 31.27, -25.36);
+
+      var pickCylinder = function (meshEvent) {
+        modal.style.display = "block";
+      };
+      var light = new BABYLON.HemisphericLight(
+        "light",
+        new BABYLON.Vector3(0, 1, 0),
+        scene
+      );
+
     });
   });
 }
@@ -76,7 +93,7 @@ function makePlane(){
     sideOrientation: BABYLON.Mesh.FRONTSIDE,
     updatable: true
   };
-   const plane = BABYLON.MeshBuilder.CreatePlane("plane", options, scene);
+  const plane = BABYLON.MeshBuilder.CreatePlane("plane", options, scene);
   const texture = new BABYLON.Texture('https://babylongrendering.blob.core.windows.net/textures/Concrete07_GLOSS_6K.jpg', scene);
   const material = new BABYLON.StandardMaterial("PLANO", scene);
   material.diffuseTexture = texture;
@@ -97,7 +114,15 @@ skybox.material = skyboxMaterial;
 
 function CameraARC() {
   // Configurar la cámara y la luz
-  var camera = new BABYLON.ArcRotateCamera("camera1", -900, 30, -200, new BABYLON.Vector3(0, 200, 0), scene);
+  let camera = new BABYLON.ArcRotateCamera(
+    "ArcRotateCamera",
+    39.2484,
+    1.4,
+    122.0,
+    new BABYLON.Vector3(43.16, 16.59, -8.31),
+    scene
+  );
+
   camera.setTarget(BABYLON.Vector3.Zero());
   camera.attachControl(canvas, true);
   camera.lowerRadiusLimit = 50;

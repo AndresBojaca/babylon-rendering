@@ -1,5 +1,40 @@
 [
   {
+    "modelName": "_BARANDAS BALCONES_TORRE 01",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_BARANDAS%20BALCONES_TORRE%2001.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_BARANDAS%20BALCONES_TORRE%2001_Corona_Diffuse.webp"
+    }
+  },
+  {
+    "modelName": "_BARANDAS BALCONES_TORRE 02",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_BARANDAS%20BALCONES_TORRE%2002.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_BARANDAS%20BALCONES_TORRE%2002_Corona_Diffuse.webp"
+    }
+  },
+  {
+    "modelName": "_CERRAMIENTO URBANISMO",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_CERRAMIENTO%20URBANISMO.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_CERRAMIENTO%20URBANISMO_Corona_Diffuse.webp"
+    }
+  },
+  {
+    "modelName": "_TORRE 1",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE%2001.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE%2001_Corona_Diffuse.webp"
+    }
+  },
+  {
+    "modelName": "_TORRE 2",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE%2002.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE%2002_Corona_Diffuse.webp"
+    }
+  },
+  {
     "modelName": "_URBANISMO",
     "glbfile": "https://babylongrendering.blob.core.windows.net/models/_URBANISMO.glb",
     "texture": {
@@ -7,17 +42,17 @@
     }
   },
   {
-    "modelName": "_TORRE1",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE 01.glb",
+    "modelName": "_VENTANAS_TORRE 01",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_VENTANAS_TORRE%2001.glb",
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE 01_Corona_Diffuse.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_VENTANAS_TORRE%2001_Corona_Diffuse.webp"
     }
   },
   {
-    "modelName": "_TORRE2",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE%2002.glb",
+    "modelName": "_VENTANAS_TORRE 02",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_VENTANAS_TORRE%2002.glb",
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE%2002_Corona_Diffuse.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_VENTANAS_TORRE%2002_Corona_Diffuse.webp"
     }
   },
   {

@@ -37,9 +37,9 @@
   },
   {
     "modelName": "_TORRE 2",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE%2002.glb",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE 02.glb",
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE%2002_Corona_Diffuse.webp",
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE 02_Corona_Diffuse.webp",
       "isAlpha": false,
       "backFaceCulling": false
     }
@@ -54,30 +54,26 @@
     }
   },
   {
-    "modelName": "_VENTANAS_TORRE 01",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_VENTANAS_TORRE%2001.glb",
-    "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_VENTANAS_TORRE%2001_Corona_Diffuse.webp",
-      "isAlpha": false,
-      "backFaceCulling": false
-    }
-  },
-  {
-    "modelName": "_VENTANAS_TORRE 02",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_VENTANAS_TORRE%2002.glb",
-    "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_VENTANAS_TORRE%2002_Corona_Diffuse.webp",
-      "isAlpha": false,
-      "backFaceCulling": false
-    }
-  },
-  {
     "modelName": "_COMUNAL",
     "glbfile": "https://babylongrendering.blob.core.windows.net/models/_COMUNAL.glb",
     "texture": {
       "url": "https://babylongrendering.blob.core.windows.net/textures/_COMUNAL_Corona_Diffuse.webp",
       "isAlpha": false,
       "backFaceCulling": false
+    }
+  },
+  {
+    "modelName": "_CASAS VECINAS",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_CASAS VECINAS.glb",
+    "texture": {
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_CASAS VECINAS_Corona_Diffuse.webp",
+      "isAlpha": false,
+      "backFaceCulling": false,
+      "position": {
+        "x": -38.20,
+        "y": 4.97,
+        "z": -270.02
+      }
     }
   }
 ]

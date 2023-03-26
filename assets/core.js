@@ -21,7 +21,7 @@ function loadModelsAndTextures() {
       glbs[i].texture.url,
       glbs[i].texture.isAlpha,
       glbs[i].texture.backFaceCulling,
-      glbs[i].texture.positionX
+      glbs[i].texture.position
     );
   }
 }
@@ -32,11 +32,10 @@ function loadModel(
   textureUrl,
   isAlpha = false,
   backFaceCulling = false,
-  positionX
+  position = false
 ) {
   BABYLON.SceneLoader.ImportMesh("", "", urlGlb, scene, function (meshes) {
     const meshMaterial1 = new BABYLON.StandardMaterial("AdoquinOcre", scene);
-    console.log('textureUrl', textureUrl)
     let texture = new BABYLON.Texture(textureUrl, scene);
     texture.vScale = -1;
     if (isAlpha) {
@@ -47,6 +46,17 @@ function loadModel(
     if (backFaceCulling) {
       meshMaterial1.backFaceCulling = false;
     }
+
+    if (position) {
+      meshes.forEach((ev) => {
+        ev.position = new BABYLON.Vector3(
+          position.x,
+          position.y,
+          position.z
+        );
+      });
+    }
+
     meshMaterial1.diffuseTexture = texture;
     meshes.forEach((ev) => {
       ev.material = meshMaterial1;

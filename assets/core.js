@@ -6,15 +6,13 @@ let canvas = document.getElementById("renderCanvas");
 // Crear una nueva escena en Babylon.js
 let engine = new BABYLON.Engine(canvas, true);
 let scene = new BABYLON.Scene(engine);
-// scene.debugLayer.show();
+scene.debugLayer.show();
 
 loadModelsAndTextures();
 // CameraDRONE();
 const Ui = new UiContext();
 
 function loadModelsAndTextures() {
-  const loadingEl = document.getElementById('loading-message');
-  const promises = []
   glbs.forEach(glb => {
     //Texture Type Validation
     if (glb.texture?.url) {
@@ -87,7 +85,7 @@ function makePlane() {
 //Make GM Plane
 makePlane();
 // Puntos de Interes
-Ui.makePoint(scene, { position: {x: 53.63, y: 31.27, z: -25.36}, markerImg: { url: 'https://babylongrendering.blob.core.windows.net/textures/pngegg.png' }, modal: { template: '<img style="width: 100%;height: 700px;object-fit: contain;" src="https://ekoospaces-losrobles.herokuapp.com/static/media/1368_fachada_comunal_plazoleta.f015e9365d16e4ecc4b5.jpg"/>' }});
+Ui.makePoint(scene, { position: {x: 0, y: 10, z: 0}, markerImg: { url: 'https://babylongrendering.blob.core.windows.net/textures/pngegg.png' }, modal: { template: '<img style="width: 100%;height: 700px;object-fit: contain;" src="https://ekoospaces-losrobles.herokuapp.com/static/media/1368_fachada_comunal_plazoleta.f015e9365d16e4ecc4b5.jpg"/>' }});
 
 //SKY
 const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 4000.0 }, scene);

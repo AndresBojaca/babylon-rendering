@@ -85,7 +85,7 @@ function makePlane() {
 //Make GM Plane
 makePlane();
 // Puntos de Interes
-Ui.makePoint(scene, { position: {x: 0, y: 10, z: 0}, markerImg: { url: 'https://babylongrendering.blob.core.windows.net/textures/pngegg.png' }, modal: { template: '<img style="width: 100%;height: 700px;object-fit: contain;" src="https://ekoospaces-losrobles.herokuapp.com/static/media/1368_fachada_comunal_plazoleta.f015e9365d16e4ecc4b5.jpg"/>' }});
+Ui.makePoint(scene, { position: {x: 53.63, y: 31.27, z: -25.36}, markerImg: { url: 'https://babylongrendering.blob.core.windows.net/textures/pngegg.png' }, modal: { template: '<img style="width: 100%;height: 700px;object-fit: contain;" src="https://ekoospaces-losrobles.herokuapp.com/static/media/1368_fachada_comunal_plazoleta.f015e9365d16e4ecc4b5.jpg"/>' }});
 
 //SKY
 const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 4000.0 }, scene);
@@ -111,7 +111,7 @@ let cameraArcRotateCamera = new BABYLON.ArcRotateCamera(
 );
 
 cameraArcRotateCamera.attachControl(canvas, true);
-cameraArcRotateCamera.lowerRadiusLimit = 2; //122.0000;
+cameraArcRotateCamera.lowerRadiusLimit = 0//90;
 cameraArcRotateCamera.upperRadiusLimit = 400.0;
 cameraArcRotateCamera.lowerBetaLimit = 1.0;
 cameraArcRotateCamera.upperBetaLimit = 1.4;

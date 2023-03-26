@@ -1,23 +1,9 @@
 let glbs = [
   {
-    "modelName": "_BARANDAS BALCONES_TORRE 01",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_BARANDAS%20BALCONES_TORRE%2001.glb",
+    "modelName": "_BARANDAS BALCONES",
+    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_BARANDAS%20BALCONES.glb",
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_BARANDAS%20BALCONES_TORRE%2001_Corona_Diffuse.webp",
-    }
-  },
-  {
-    "modelName": "_BARANDAS BALCONES_TORRE 01 ALPHA",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_BARANDAS%20BALCONES_TORRE%2001.glb",
-    "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_BARANDAS%20BALCONES_TORRE%2002_Corona_Alpha.webp",
-    }
-  },
-  {
-    "modelName": "_BARANDAS BALCONES_TORRE 02",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_BARANDAS%20BALCONES_TORRE%2002.glb",
-    "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_BARANDAS%20BALCONES_TORRE%2002_Corona_Diffuse.webp"
+      "url": "https://babylongrendering.blob.core.windows.net/textures/_BARANDAS%20BALCONES_Corona_Diffuse.webp",
     }
   },
   {

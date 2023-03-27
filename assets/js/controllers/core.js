@@ -97,18 +97,7 @@ export class CoreContext {
 
   CameraARC() {
     // Configurar la cámara y la luz
-<<<<<<< HEAD
-    let cameraArcRotateCamera = new BABYLON.ArcRotateCamera(
-      "ArcRotateCamera",
-      39.2484,
-      1.4,
-      122.0,
-      new BABYLON.Vector3(43.16, 16.59, -8.31),
-      this.scene
-    );
-=======
     let cameraArcRotateCamera = new BABYLON.ArcRotateCamera("ArcRotateCamera", 39.2484, 1.4, 122.0,new BABYLON.Vector3(38, 16.59, -8.31),this.scene);
->>>>>>> a682f0895f5db534200186665f1b560eb4ba826d
     cameraArcRotateCamera.attachControl(this.canvas, true);
     cameraArcRotateCamera.lowerRadiusLimit = 2//90;
     cameraArcRotateCamera.upperRadiusLimit = 400.0;

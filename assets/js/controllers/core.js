@@ -10,8 +10,9 @@ export class CoreContext {
   }
 
   loadModelsAndTextures() {
+    const loader = document.getElementById('loader');
+    loader.classList.add('show');
     glbs.forEach(glb => {
-      //Texture Type Validation
       if (glb.texture?.url) {
         this.loadModel(glb.glbfile, this.scene, { type: 'file', texture: glb.texture }, `${glb.modelName}`);
       }
@@ -19,8 +20,15 @@ export class CoreContext {
         this.loadModel(glb.glbfile, this.scene, { type: 'color', texture: glb.texture }, `${glb.modelName}`);
       }
     });
+    // Quita el loader despues de que los modelos cargaron
+    this.scene.executeWhenReady(() => {
+      loader.classList.remove('show');
+      setTimeout(() => {
+      loader.style.display = 'none';
+      }, 100);
+    });
   }
-
+  
   loadModel(urlGlb, scene, textureModel, modelName, position = false) {
     BABYLON.SceneLoader.ImportMesh("", "", urlGlb, scene, function (meshes) {
       const meshMaterial = new BABYLON.StandardMaterial(modelName, scene);
@@ -48,7 +56,7 @@ export class CoreContext {
       meshes.forEach((ev) => { ev.material = meshMaterial; ev.checkCollisions = true;});
     });
   }
-
+  
   loadSky() {
     const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 4000.0 }, this.scene);
     const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", this.scene);

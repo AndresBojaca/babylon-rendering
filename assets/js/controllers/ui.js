@@ -1,42 +1,16 @@
 export class UiContext {
-  constructor() {}
+  constructor() {
+    this.close = document.getElementById('closeModal');
+    this.modalDOM = document.getElementById('modal');
+    this.modalContentDOM = document.getElementById('modalContent');
+  }
 
   makePoint(scene, props) {
-    //GUI
     let meshT = new BABYLON.Mesh("box", scene);
     let advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
 
-    //Marker validation GLB
-    if(props.marker?.type ==='glb'){
-        let markerContainer = new BABYLON.GUI.Container();
-        advancedTexture.addControl(markerContainer);
-        advancedTexture.isPointerBlocker = false;
-        BABYLON.SceneLoader.ImportMesh("", props.marker?.type.url, props.marker?.type.sceneUrl, scene, function onSuccess(meshes) {
-        let markerMesh = meshes[0];
-        markerMesh.isVisible = false;
-        markerMesh.actionManager = new BABYLON.ActionManager(scene);
-        // Crear imagen GUI para el marcador
-        let markerImage = new BABYLON.GUI.Image("marker");
-        markerImage.width = props.marker?.width;
-        markerImage.height = props.marker?.height;
-        markerImage.stretch = BABYLON.GUI.Image.STRETCH_UNIFORM;
-        markerContainer.addControl(markerImage);
-        markerImage.billboardMode = BABYLON.AbstractMesh.BILLBOARDMODE_ALL;
-        markerContainer.linkWithMesh(markerMesh);
-        markerMesh.position = new BABYLON.Vector3(props.position.x, props.position.y, props.position.z);
-    
-      }, null, function onError(scene, message, exception) {
-        try {
-            console.error("Error cargando archivo GLTF:", message, exception);
-        } catch (error) {
-            console.error("Error en la función onError:", error);
-        }
-      });
-    }
     //Marker validation Image
     if(props.marker?.type ==='image'){
-
-    // GUI
       let markerImage = new BABYLON.GUI.Image(
         "marker",
         props.marker?.url
@@ -51,14 +25,36 @@ export class UiContext {
       //Modal Validation with template
       if(props.hasOwnProperty('modal')){
         markerImage.onPointerUpObservable.add(() => {
-          this.modal(props.modal.template)
+          this.modal(true, props.modal.template);
         });
       }
     }
   }
-  modal(template){
-    let modal = document.getElementById('myModal');
-    modal.innerHTML = template;
-    modal.style.opacity = 1;
+  modal(show, template = ''){
+    this.close.addEventListener('click', ()=>{
+      document.getElementById('modal').style.opacity = 1;
+      document.getElementById('modal').style.display = "none";
+      let opacidad = 1;
+      const intervalo = setInterval(function() {
+        opacidad -= 1;
+        document.getElementById('modal').style.opacity = opacidad;
+        if (opacidad <= 1) {
+          clearInterval(intervalo);
+        }
+      }, 50);
+    })
+    if(show === true){
+      this.modalContentDOM.innerHTML = template;
+      document.getElementById('modal').style.opacity = 0;
+      document.getElementById('modal').style.display = "block";
+      let opacidad = 0;
+      const intervalo = setInterval(function() {
+        opacidad += 0.1;
+        document.getElementById('modal').style.opacity = opacidad;
+        if (opacidad >= 1) {
+          clearInterval(intervalo);
+        }
+      }, 50);
+    }
   }
 }

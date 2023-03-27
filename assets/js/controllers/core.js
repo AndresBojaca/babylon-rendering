@@ -69,15 +69,15 @@ export class CoreContext {
 
   CameraARC() {
     // Configurar la cámara y la luz
-    let cameraArcRotateCamera = new BABYLON.ArcRotateCamera("ArcRotateCamera", 39.2484, 1.4, 122.0,new BABYLON.Vector3(43.16, 16.59, -8.31),this.scene);
+    let cameraArcRotateCamera = new BABYLON.ArcRotateCamera("ArcRotateCamera", 39.2484, 1.4, 122.0,new BABYLON.Vector3(38, 16.59, -8.31),this.scene);
     cameraArcRotateCamera.attachControl(this.canvas, true);
-    cameraArcRotateCamera.lowerRadiusLimit = 90;
+    cameraArcRotateCamera.lowerRadiusLimit = 2//90;
     cameraArcRotateCamera.upperRadiusLimit = 400.0;
     cameraArcRotateCamera.lowerBetaLimit = 1.0;
     cameraArcRotateCamera.upperBetaLimit = 1.4;
     cameraArcRotateCamera.wheelDeltaPercentage = 0.01;
     cameraArcRotateCamera.applyGravity = true;
-    // this.scene.collisionsEnabled = true;
+    this.scene.collisionsEnabled = true;
     cameraArcRotateCamera.checkCollisions = true;
     //Lights
     let light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), this.scene);

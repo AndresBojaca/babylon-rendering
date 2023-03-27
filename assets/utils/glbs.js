@@ -1,68 +1,67 @@
+const CDN = 'https://babylongrendering.blob.core.windows.net';
+const CDN_MODELS = `${CDN}/models`;
+const CDN_TEXTURES = `${CDN}/textures`;
+
 let glbs = [
   {
     "modelName": "_BARANDAS BALCONES",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_BARANDAS%20BALCONES.glb",
+    "glbfile": `${CDN_MODELS}/_BARANDAS%20BALCONES.glb`,
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_BARANDAS%20BALCONES_Corona_Diffuse.webp",
+      "url": `${CDN_TEXTURES}/_BARANDAS%20BALCONES_Corona_Diffuse.webp`,
     }
   },
   {
     "modelName": "_CERRAMIENTO URBANISMO",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_CERRAMIENTO%20URBANISMO.glb",
+    "glbfile": `${CDN_MODELS}/_CERRAMIENTO%20URBANISMO.glb`,
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_CERRAMIENTO%20URBANISMO_Corona_Diffuse.webp",
+      "url": `${CDN_TEXTURES}/_CERRAMIENTO%20URBANISMO_Corona_Diffuse.webp`,
       "isAlpha": true,
       "backFaceCulling": true
     }
   },
   {
     "modelName": "_TORRE 1",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE 01.glb",
+    "glbfile": `${CDN_MODELS}/_TORRE 01.glb`,
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE 01_Corona_Diffuse.webp",
+      "url": `${CDN_TEXTURES}/_TORRE 01_Corona_Diffuse.webp`,
       "isAlpha": false,
       "backFaceCulling": true
     }
   },
   {
     "modelName": "_TORRE 2",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_TORRE 02.glb",
+    "glbfile": `${CDN_MODELS}/_TORRE 02.glb`,
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_TORRE 02_Corona_Diffuse.webp",
+      "url": `${CDN_TEXTURES}/_TORRE 02_Corona_Diffuse.webp`,
       "isAlpha": false,
       "backFaceCulling": false
     }
   },
   {
     "modelName": "_URBANISMO",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_URBANISMO.glb",
+    "glbfile": `${CDN_MODELS}/_URBANISMO.glb`,
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_URBANISMO_Corona_Diffuse.webp",
+      "url": `${CDN_TEXTURES}/_URBANISMO_Corona_Diffuse.webp`,
       "isAlpha": false,
       "backFaceCulling": true
     }
   },
   {
     "modelName": "_COMUNAL",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_COMUNAL.glb",
+    "glbfile": `${CDN_MODELS}/_COMUNAL.glb`,
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_COMUNAL_Corona_Diffuse.webp",
+      "url": `${CDN_TEXTURES}/_COMUNAL_Corona_Diffuse.webp`,
       "isAlpha": false,
       "backFaceCulling": false
     }
   },
   {
-    "modelName": "_CASAS VECINAS",
-    "glbfile": "https://babylongrendering.blob.core.windows.net/models/_CASAS VECINAS.glb",
+    "modelName": "_EQUIPAMENTO URBANISTICO",
+    "glbfile": `${CDN_MODELS}/_EQUIPAMENTO URBANISTICO.glb`,
     "texture": {
-      "url": "https://babylongrendering.blob.core.windows.net/textures/_CASAS VECINAS_Corona_Diffuse.webp",
+      "url": `${CDN_TEXTURES}/_EQUIPAMENTO URBANISTICO_Corona_Diffuse.webp`,
       "isAlpha": false,
-      "backFaceCulling": false,
-      "position": {
-        "x": -38.20,
-        "y": 4.97,
-        "z": -270.02
-      }
+      "backFaceCulling": false
     }
-  }
+  },
 ];

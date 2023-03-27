@@ -1,4 +1,5 @@
 export class UiContext {
+  
   constructor() {
     this.close = document.getElementById('closeModal');
     this.modalDOM = document.getElementById('modal');

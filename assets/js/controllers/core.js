@@ -10,23 +10,13 @@ export class CoreContext {
   }
 
   loadModelsAndTextures() {
-    glbs.forEach((glb) => {
+    glbs.forEach(glb => {
       //Texture Type Validation
       if (glb.texture?.url) {
-        this.loadModel(
-          glb.glbfile,
-          this.scene,
-          { type: "file", texture: glb.texture.url },
-          `${glb.modelName}`
-        );
+        this.loadModel(glb.glbfile, this.scene, { type: 'file', texture: glb.texture }, `${glb.modelName}`);
       }
       if (glb.texture?.color) {
-        this.loadModel(
-          glb.glbfile,
-          this.scene,
-          { type: "color", texture: glb.texture },
-          `${glb.modelName}`
-        );
+        this.loadModel(glb.glbfile, this.scene, { type: 'color', texture: glb.texture }, `${glb.modelName}`);
       }
     });
   }
@@ -35,57 +25,45 @@ export class CoreContext {
     BABYLON.SceneLoader.ImportMesh("", "", urlGlb, scene, function (meshes) {
       const meshMaterial = new BABYLON.StandardMaterial(modelName, scene);
       //Texture Type Validation
-      if (textureModel.type === "file") {
-        let texture = new BABYLON.Texture(textureModel.texture, scene);
-        //Voltea las Texturas
+      if (textureModel.type === 'file') {
+        let texture = new BABYLON.Texture(textureModel.texture.url, scene);
         texture.vScale = -1;
         meshMaterial.diffuseTexture = texture;
-      } else if (textureModel.type === "color") {
-        meshMaterial.diffuseColor = new BABYLON.Color3.FromHexString(
-          textureModel.texture.color
-        );
+      } else if (textureModel.type === 'color') {
+        meshMaterial.diffuseColor = new BABYLON.Color3.FromHexString(textureModel.texture.color);
         meshMaterial.alpha = textureModel.texture.alpha;
+      }
+      if(textureModel.texture.hasOwnProperty('alphaurl')){
+        let texture = new BABYLON.Texture(textureModel.texture.alphaurl, scene);
+        texture.vScale = -1;
+        meshMaterial.opacityTexture = texture;
+        meshMaterial.backFaceCulling = false;
+        texture.getAlphaFromRGB = true;
       }
       if (position) {
         meshes.forEach((ev) => {
           ev.position = new BABYLON.Vector3(position.x, position.y, position.z);
         });
       }
-      meshes.forEach((ev) => {
-        ev.material = meshMaterial;
-        ev.checkCollisions = true;
-      });
+      meshes.forEach((ev) => { ev.material = meshMaterial; ev.checkCollisions = true;});
     });
   }
 
   loadSky() {
-    const skybox = BABYLON.MeshBuilder.CreateBox(
-      "skyBox",
-      { size: 4000.0 },
-      this.scene
-    );
+    const skybox = BABYLON.MeshBuilder.CreateBox("skyBox", { size: 4000.0 }, this.scene);
     const skyboxMaterial = new BABYLON.StandardMaterial("skyBox", this.scene);
     //Propiedades del Cielo
     skyboxMaterial.backFaceCulling = false;
-    skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
-      `${CDN_TEXTURES}/skybox`,
-      this.scene
-    );
+    skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(`${CDN_TEXTURES}/skybox`,this.scene);
     skybox.infiniteDistance = true;
-    skyboxMaterial.reflectionTexture.coordinatesMode =
-      BABYLON.Texture.SKYBOX_MODE;
+    skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
     skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
     skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
     skybox.material = skyboxMaterial;
   }
 
   makePlane(textureURL) {
-    const options = {
-      width: 3000,
-      height: 3000,
-      sideOrientation: BABYLON.Mesh.FRONTSIDE,
-      updatable: true,
-    };
+    const options = { width: 3000, height: 3000, sideOrientation: BABYLON.Mesh.FRONTSIDE, updatable: true };
     const plane = BABYLON.MeshBuilder.CreatePlane("plane", options, this.scene);
     const texture = new BABYLON.Texture(textureURL, this.scene);
     const material = new BABYLON.StandardMaterial("PLANO", this.scene);
@@ -99,7 +77,7 @@ export class CoreContext {
     // Configurar la cámara y la luz
     let cameraArcRotateCamera = new BABYLON.ArcRotateCamera("ArcRotateCamera", 39.2484, 1.4, 122.0,new BABYLON.Vector3(38, 16.59, -8.31),this.scene);
     cameraArcRotateCamera.attachControl(this.canvas, true);
-    cameraArcRotateCamera.lowerRadiusLimit = 2//90;
+    cameraArcRotateCamera.lowerRadiusLimit = 90;
     cameraArcRotateCamera.upperRadiusLimit = 400.0;
     cameraArcRotateCamera.lowerBetaLimit = 1.0;
     cameraArcRotateCamera.upperBetaLimit = 1.4;
@@ -108,11 +86,7 @@ export class CoreContext {
     this.scene.collisionsEnabled = true;
     cameraArcRotateCamera.checkCollisions = true;
     //Lights
-    let light = new BABYLON.HemisphericLight(
-      "light",
-      new BABYLON.Vector3(0, 1, 0),
-      this.scene
-    );
+    let light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), this.scene);
     light.intensity = 2.0;
   }
   CameraDRONE() {
@@ -230,7 +204,9 @@ export class CoreContext {
     });
   }
 
-  loadDebugger() {
+  loadDebugger(){
     this.scene.debugLayer.show();
   }
 }
+
+

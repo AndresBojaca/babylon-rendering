@@ -29,3 +29,9 @@ body {
 #modal.show{
   opacity: 1;
 }
+
+#closeModal{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+} 

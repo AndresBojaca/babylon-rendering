@@ -1,5 +1,4 @@
 export class UiContext {
-  
   constructor() {
     this.close = document.getElementById('closeModal');
     this.modalDOM = document.getElementById('modal');
@@ -33,29 +32,11 @@ export class UiContext {
   }
   modal(show, template = ''){
     this.close.addEventListener('click', ()=>{
-      document.getElementById('modal').style.opacity = 1;
-      document.getElementById('modal').style.display = "none";
-      let opacidad = 1;
-      const intervalo = setInterval(function() {
-        opacidad -= 1;
-        document.getElementById('modal').style.opacity = opacidad;
-        if (opacidad <= 1) {
-          clearInterval(intervalo);
-        }
-      }, 50);
+      this.modalDOM.classList.remove('show');
     })
     if(show === true){
       this.modalContentDOM.innerHTML = template;
-      document.getElementById('modal').style.opacity = 0;
-      document.getElementById('modal').style.display = "block";
-      let opacidad = 0;
-      const intervalo = setInterval(function() {
-        opacidad += 0.1;
-        document.getElementById('modal').style.opacity = opacidad;
-        if (opacidad >= 1) {
-          clearInterval(intervalo);
-        }
-      }, 50);
+      this.modalDOM.classList.add('show');
     }
   }
 }

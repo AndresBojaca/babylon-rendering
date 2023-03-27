@@ -137,13 +137,12 @@ export class CoreContext {
     BABYLON.SceneLoader.ImportMesh(
       "",
       "",
-      "https://babylongrendering.blob.core.windows.net/models/_CARROS001.glb",
+      `${CDN_MODELS}/_CARROS001.glb`,
       this.scene,
       function (ev) {
-        console.log(ev);
         // Set the target of the camera to the first imported mesh
-        const meshMaterial = new BABYLON.StandardMaterial("_CARROS001.glb",scene);
-        let texture = new BABYLON.Texture("https://babylongrendering.blob.core.windows.net/textures/_CARROS001_Corona_Diffuse.webp",scene);
+        const meshMaterial = new BABYLON.StandardMaterial("_CARROS001",scene);
+        let texture = new BABYLON.Texture(`${CDN_TEXTURES}/_CARROS001_Corona_Diffuse.webp`,scene);
         texture.vScale = -1;
         meshMaterial.diffuseTexture = texture;
         ev[0].material = meshMaterial;
@@ -163,7 +162,7 @@ export class CoreContext {
     BABYLON.SceneLoader.ImportMesh(
       "",
       "",
-      "https://babylongrendering.blob.core.windows.net/models/_CARROS001.glb",
+      `${CDN_MODELS}/_CARROS001.glb`,
       this.scene,
       function (ev) {
         // Set the target of the camera to the first imported mesh
@@ -171,7 +170,7 @@ export class CoreContext {
           "_CARROS001.glb",
           scene
         );
-        let texture = new BABYLON.Texture("https://babylongrendering.blob.core.windows.net/textures/_CARROS001_Corona_Diffuse.webp",scene);
+        let texture = new BABYLON.Texture(`${CDN_TEXTURES}/_CARROS001_Corona_Diffuse.webp`,scene);
         texture.vScale = -1;
         meshMaterial.diffuseTexture = texture;
         ev[0].setParent(box);
